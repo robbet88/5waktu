@@ -82,7 +82,7 @@ body{
   height: 200px;
   background: rgba(0,0,0,0.2);
   border-radius: 50%;
-  background-image: url("/jam.png");
+  background-image: url("jam.png");
   background-size: cover;
 }
 .mnt,.jrmjm,.jrmmn
