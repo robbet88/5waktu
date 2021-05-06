@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap');
+  </style>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <title>Jadwal sholat</title>
+</head>
+<body class="">
+  <div class="container head">
+  	<div class="row ">
+	      <div class="col-4">
+	        <nav class="navbar pl-1 navbar-expand-lg navbar-dark ">
+        
+          <button class="full-left navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" id="cri"  href="http://robbet88.github.io/covid">Perkembangan Covid-19</a>
+            </div>
+          </div>
+        </nav>
+	      </div>
+	      <div class="col-8">
+	        <h3 class="j text-light py-2">Jadwal Sholat
+	      <div class="spinner-grow text-warning" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+	      </h3>
+	      </div>
+  	</div>
+  </div>
+	<div class="container  mt-3">
+	  <div class="row">
+	    <div class="col-12  mt-3 m-auto col-md-12 col-lg-8">
+	      <div class="card border border-0">
+	        <div class="container">
+	          <div class="row">
+  	        <div class="col-7 d-flex p-0">
+      	      <div id="cvr" class="analog border border-4 border-dark shadow m-auto"></div>
+      	      <div class="mnt position-absolute d-flex m-auto">
+      	        <img class="angka m-auto" src="angka.png" alt="">
+      	      </div>
+      	      <div id="jarumJam" class="jrmjm position-absolute d-flex m-auto">
+      	        <img class="jmm m-auto" src="jrm.png" alt="">
+      	      </div>
+      	      <div id="menit" class="jrmmn position-absolute d-flex m-auto">
+      	        <img class="mnn m-auto" src="mnt.png" alt="">
+      	      </div>
+  	        </div>
+  	        <div class="col-5 p-0">
+      	      <div class="jam m-auto d-flex">
+      	        <h5 class="waktu p-2 rounded text-center text-light m-auto position-relative">
+                  <span id="jm">00</span> <span class="dot">:</span>
+                  <span id="mn">00</span> <span class="dot">:</span>
+                  <span id="dt">00</span> <span id="say" class="btn text-light py-0">GoodMorning<i id="logo" class="fa fa-sun"></i></span>
+                </h5>
+      	      </div>
+      	      <div class="mundur text-center">
+  	             <div class="too btn-group-vertical">
+                    <div class=" btn jdl text-light bg-primary">Menuju Waktu <span id="wait">..</span></div>
+                    <div class="btn btn-secondary"><span id="countdown">00:00:00</span></div>
+                  </div>
+      	      </div>
+  	        </div>
+	        </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="row mt-3 mb-5">
+	    <div class="col col-md-12 col-lg-8 mt-3 m-auto">
+	      <div class="card shadow  border border-0">
+	        <div class="card-header mb-0">
+	          <h3 class="text-center judul">
+	            Jadwal Sholat Wilayah <span id="kota"></span> <button id="btnC" class="btn btn-light"><i class="fa fa-filter"></i></button>
+	            <div id="cari" class="mt-2 col">
+	              <div class="form-group">
+	                <select class="form-control" onchange="filter(search.value,jam())" id="search">
+	                  <option value="691-Purwakarta" selected >Purwakarta</option>
+	                </select>
+	              </div>
+	            </div>
+	           </h3>
+	         </div>
+	         <div class="card-body">
+	            <div class="ucp card border-0 p-0 border">
+	              <div id="manik" class="card-body d-flex p-2 text-justify">
+	                <p id="txt" class="m-auto text-primary text-center">Selamat Menjalankan Ibadah Puasa</p>
+	              </div>
+	            </div>
+	          <div class="badge badge-primary ml-3 py-0 mt-2">
+	            <h6 class="p-0 mt-2">
+	              <i class="fas fa-calendar"> </i> <span id="tanggal">000</span>
+	            </h6>
+	          </div>
+	          
+	          <div class="col text-center mt-1 ovr">
+	            <div class="card border border-0">
+	              <div class="card-body p-0 ovr d-flex  overflow-auto jw">
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Imsak</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="imsak" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Shubuh</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="subuh" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Terbit</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="terbit" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Dhuha</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="duha" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Dzuhur</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="duhur" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Ashar</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="ashar" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Maghrib</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="magrib" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Isya</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="isya" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	                <div class="calender shadow m-1 text-light text-center">
+	                  <div class="tittle d-flex">
+	                    <h5 class="m-auto">Sekarang</h5>
+	                  </div>
+	                  <div class="isi d-flex">
+	                    <h5 id="now" class="m-auto">00:00</h5>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	           
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="row bg-dark mt-3 text-light">
+	    <div class="col-12">
+	      <div class="card bg-dark border border-0">
+	        <div class="card-body py-3">
+	          <h6 class="text-center">Created By Saripdn || @robbet88</h6>
+	        </div>
+	      </div>
+	    </div>
+	      <div class="col-3">
+	        <div class="card border-0 bg-dark">
+	          <div class="card-body  p-0 pb-2">
+	            Mohon Maaf Masih Banyak bug <i class="fa fa-bug"></i>
+	            
+	          </div>
+	        </div>
+	      </div>
+	      <div class="col-5">
+	        <div class="card border-0 bg-dark">
+	          <div class="card-body p-0">
+	            <i class="fab fa-js"></i> JavaScript<br>
+	            <i class="fa fa-code"></i> Jquery<br>
+	            <i class="fab fa-bootstrap"></i> Bootstrap<br>
+	            <a class="text-light" href="https://fathimah.docs.apiary.io/#introduction/dokumentasi"><i class="fa fa-server"></i> API <i class="fa fa-info-circle"></i>Fathimah Bot</a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="col-4">
+	        <div class="card border-0 bg-dark">
+	          <div class="card-body pl-1 pt-1">
+	            <a class="link text-light" href="https://www.facebook.com/robbet88"><i class="fab fa-facebook"></i> Saripdn</a><br>
+	            <a class="link text-light" href="https://www.instagram.com/robbet88"><i class="fab fa-instagram"></i> @robbet88</a><br>
+	            <a class="link text-light" href="https://t.me/robbett"><i class="fab fa-telegram"></i> @robbett</a><br>
+	            <a class="link text-light" href="https://github.com/robbet88"><i class="fab fa-github"></i> robbett88</a>
+	            <a class="link text-light" href="#"><i class="fa fa-envelope"></i> <i class="fa fa-at"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="col-12 mt-2">
+	        <h6 class="text-center">Thank You For Visited :)</h6>
+	      </div>
+	  </div>
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
