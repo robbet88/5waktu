@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+*{
+  font-family: 'Barlow Condensed', sans-serif;
+}
+body{
+  padding: 0;
+  margin: 0;
+  
+}
+.calender
+{
+  display: flex;
+  flex-direction: column;
+  width: 90px;
+  height: 80px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.calender > .tittle
+{
+  flex: 2;
+  background: #0087f0;
+}
+.tittle > h5
+{
+  font-size: 25px;
+}
+.calender > .isi
+{
+  flex: 3;
+  background: #8f8f8f;
+}
+.ucp
+{
+  overflow: hidden;
+  height: 100px;
+}
+.calender > .isi >h5
+{
+  width: 100%;
+  height: 100%;
+  line-height: 48px;
+  background: #00000000;
+  font-size: 30px;
+}
+.too
+{
+  width: 150px;
+}
+#txt
+{
+  z-index: 22;
+  background: #fff;
+  font-weight: bold;
+}
+.kedip
+{
+  animation: paket 1s linear infinite;
+}
+@keyframes paket
+{
+  from
+  {
+    background: #ff4300;
+  }
+  to
+  {
+    background: #00000000;
+  }
+}
+.bg
+{
+  background: #00336e;
+}
+.waktu
+{
+  width: 150px;
+  background: #007df7;
+  font-weight: bold;
+}
+.waktu > span
+{
+  position: relative;
+}
+.dot
+{
+  opacity: 1;
+  animation: dot 1s linear infinite;
+}
+@keyframes up
+{
+  from
+  {
+    bottom: -4px;
+  }
+  to{
+    bottom: 100%;
+  }
+}
+@keyframes dot
+{
+  from
+  {
+    color: #ff003f;
+    opacity: 1;
+  }
+  to
+  {
+    color: White;
+    opacity: 0;
+  }
+}
+.head
+{
+  background: rgb(0,124,255);
+}
+.j
+{
+  font-family: 'Itim', cursive;
+  
+}
+.judul
+{
+  font-size: 22px;
+  text-transform: capitalize;
+}
+#kota
+{
+  text-transform: capitalize;
+}
+.jw
+{
+  flex-wrap: wrap;
+  justify-content: space-evenly
+}
+.ovr
+{
+  overflow-x: auto;
+}
+.btn-info
+{
+  width: 100px;
+  margin-bottom: 5px;
+}
+.z
+{
+  flex-direction: row;
+}
+.analog
+{
+  width: 150px;
+  height: 150px;
+  background: #007be3;
+  border-radius: 50%;
+  background-image: url("/jam.png");
+  background-size: cover;
+  border-width: 3px;
+}
+.mnt,.jrmjm,.jrmmn
+{
+  width: 100%;
+  height: 100%;
+}
+.jmm,.mnn
+{
+  width: 100px;
+  height: 100px;
+}
+.jdl
+{
+  width: 200px;
+  border-radius: 2px;
+}
+.jam
+{
+  width: 100%;
+  height: 50%;
+}
+
+.card
+{
+  width: 100%;
+  display: flex;
+}
+.angka
+{
+  width: 120px;
+  height: 120px;
+  
+}
+.badge
+{
+  font-size: 50px;
+}
+.mundur
+{
+}
+#countdown
+{
+  font-weight: bold;
+  font-size: 20px;
+}
+#wait
+{
+  text-transform: capitalize;
+}
+#tanggal
+{
+  font-weight: bold;
+}
