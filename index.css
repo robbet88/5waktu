@@ -152,7 +152,7 @@ body{
   height: 150px;
   background: #007be3;
   border-radius: 50%;
-  background-image: url("/jam.png");
+  background-image: url("jam.png");
   background-size: cover;
   border-width: 3px;
 }
