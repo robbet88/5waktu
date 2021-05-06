@@ -160,17 +160,18 @@ function after(obj,ja) {
       ashar = obj.ashar,
       magrib = obj.maghrib,
       isya = obj.isya,
-      jam = ja[0]
-  
-  if (jam >= imsak.split(":")[0] && jam <= subuh.split(":")[0]) {
+      jam = ja[0],
+      mn = ja[1]
+ 
+  if (jam >= imsak.split(":")[0] && jam <= subuh.split(":")[0] && mn < subuh.split(":")[1]) {
     return "imsak"
-  }else if (jam >= subuh.split(":")[0] && jam < duhur.split(":")[0]) {
+  }else if (jam >= subuh.split(":")[0] && jam <= duhur.split(":")[0] && mn < duhur.split(":")[1]) {
     return "subuh"
-  }else if (jam >= duhur.split(":")[0] && jam < ashar.split(":")[0]) {
+  }else if (jam >= duhur.split(":")[0] && jam <= ashar.split(":")[0] && mn < ashar.split(":")[1]) {
     return "duhur"
-  }else if (jam >= ashar.split(":")[0] && jam < magrib.split(":")[0]) {
+  }else if (jam >= ashar.split(":")[0] && jam <= magrib.split(":")[0] && mn < magrib.split(":")[1]) {
     return "ashar"
-  }else if (jam >= magrib.split(":")[0] && jam < isya.split(":")[0]) {
+  }else if (jam >= magrib.split(":")[0] && jam <= isya.split(":")[0] && mn < isya.split(":")[1]) {
     return "isya"
   }else if (jam >= isya.split(":")[0] && jam < 23) {
     return "isya"
